@@ -1,0 +1,7 @@
+# TODO: 下面這是環境變數,會影響到debug設定
+SetEnv CI_ENV development
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|vendors|public|uploads|robots\.txt|$)
+RewriteRule ^(.*)$ index.php/$1 [L]
